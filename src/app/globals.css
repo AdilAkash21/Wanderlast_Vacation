@@ -1,0 +1,82 @@
+@import "tailwindcss";
+@import "@heroui/styles"; 
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+html.dark {
+  --background: #000000;
+  --foreground: #f3fbfa;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+  min-width: 320px;
+}
+
+html.dark body {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+.wanderlast-logo {
+  filter: brightness(0) invert(1);
+}
+
+html.dark .wanderlast-logo {
+  filter: brightness(0);
+}
+
+html.dark main:not(.bg-\[\#0f9f9a\]) {
+  background-color: var(--background);
+}
+
+html.dark .text-\[\#173a3d\] {
+  color: #f3fbfa;
+}
+
+html.dark .text-\[\#5d7375\] {
+  color: #b7cfcc;
+}
+
+html.dark .border-\[\#dce9e7\] {
+  border-color: #345254;
+}
+
+html.dark .bg-\[\#f5fbfa\] {
+  background-color: #203638;
+}
+
+html.dark .auth-surface {
+  background-color: #000000;
+}
+
+html.dark input {
+  color: #f3fbfa;
+}
+
+button,
+a {
+  transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
